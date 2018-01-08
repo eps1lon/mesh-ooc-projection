@@ -1,0 +1,19 @@
+{
+  "env": {
+    "jest": true,
+    "node": true
+  },
+
+  "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "script",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["node"],
+  "rules": {
+    "no-console": "off"
+  }
+}

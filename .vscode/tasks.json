@@ -1,0 +1,21 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "project-debug",
+      "type": "shell",
+      "command":
+        "node --inspect-brk --nolazy -r ts-node/register src/cli/projectRegular.ts -f ../tmp/profile/low_poly.off --res 30 -o ../tmp/profile/ooc/ --high-poly-vertices 2791167  --indices-file ../tmp/profile/eisriesenwelt.surfseg",
+      "problemMatcher": []
+    },
+    {
+      "label": "ooc-debug",
+      "type": "shell",
+      "command":
+        "node --inspect-brk --nolazy -r ts-node/register src/cli/writeRegular.ts -f ../tmp/eisriesenwelt/EisriesenWelt10PercentD12.off -r 30 -o ../tmp/ooc30D12/",
+      "problemMatcher": []
+    }
+  ]
+}

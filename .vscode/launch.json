@@ -1,0 +1,219 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "main test",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/main.ts",
+        "--low-poly-file",
+        "../tmp/eisriesenwelt/EisriesenweltSegmentationVisualization.off",
+        "--high-poly-file",
+        "../tmp/eisriesenwelt/EisriesenWelt10PercentD12.off",
+        "--indices-file",
+        "../tmp/eisriesenwelt/eisriesenwelt.surfseg",
+        "--grid-resolution-max",
+        "30",
+        "--ooc-dir",
+        "../tmp/main/",
+        ">",
+        "main30d12.log",
+        "2>&1"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "--max-old-space-size=1024",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "carlsbad main test",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/main.ts",
+        "--low-poly-file",
+        "../tmp/carlsbad/segmented.off",
+        "--high-poly-file",
+        "../tmp/carlsbad/Carlsbad - full scan.off",
+        "--indices-file",
+        "../tmp/carlsbad/segmented.surfseg",
+        "--grid-resolution-max",
+        "30",
+        "--ooc-dir",
+        "../tmp/ooc30carlsbad/",
+        ">",
+        "carlsbad30.log",
+        "2>&1"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "--max-old-space-size=1024",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "ooc test",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/createRegular.ts",
+        "-f",
+        "../tmp/eisriesenwelt/EisriesenWelt10PercentD12.off",
+        "-r",
+        "20",
+        "-o",
+        "../tmp/ooc20D12/"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector"
+    },
+    {
+      "name": "project test",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/projectRegular.ts",
+        "-f",
+        "../data/eisriesenweltD12/low_poly.off",
+        "-r",
+        "30",
+        "-o",
+        "../data/eisriesenweltD12/ooc/",
+        "--indices-file",
+        "../data/eisriesenweltD12/eisriesenwelt.surfseg",
+        "--high-poly-vertices",
+        "2791167"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "--max-old-space-size=1024",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "snapshot test",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/snapshotRegular.ts",
+        "-f",
+        "'../data/eisriesenweltD13.1/ooc/x26*'"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "halfedge test",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/snapshotHalfEdge.ts",
+        "-f",
+        "../tmp/ooc20d/x5y14z2"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Tests",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+      "args": [
+        "--config",
+        "package.json",
+        "--runInBand"
+      ],
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "console": "internalConsole",
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "project test small file",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/projectRegular.ts",
+        "-f",
+        "../tmp/eisriesenwelt/EisriesenweltSegmentationVisualization.off",
+        "-r",
+        "20",
+        "-o",
+        "../tmp/ooc20D8/",
+        "--indices-file",
+        "../tmp/eisriesenwelt/eisriesenwelt.surfseg",
+        "--high-poly-vertices",
+        "175048"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "--max-old-space-size=1024",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "snapshot test small file",
+      "type": "node",
+      "request": "launch",
+      "args": [
+        "src/cli/snapshotRegular.ts",
+        "-f",
+        "'../tmp/ooc20D8/*'"
+      ],
+      "runtimeArgs": [
+        "--nolazy",
+        "-r",
+        "ts-node/register"
+      ],
+      "sourceMaps": true,
+      "cwd": "${workspaceRoot}",
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    }
+  ]
+}
